@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Melp</title>
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/bootstrap-theme.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+    <div id="wrapper">
+	  <div id="sidebar-wrapper">
+	  <br />
+	  <p style="text-align: left;margin-left: 9%">Choose category</p>
+	  <div class="row">
+	  	<div class="col-md-10 col-md-offset-1">
+	  		<!-- bind our categories with markup -->
+	  		<select class="form-control" data-bind="options: categories, optionsText: 'name', optionsValue: 'id', value: selectCategory, optionsCaption: 'Any'"></select>
+	  		<!-- container for list of locations -->            
+            <ul class="locations" data-bind="foreach: places">
+                <li data-bind="click: showMarker, attr:{'data-name': businesses[0].name, 'data-cat': businesses[0].categoryId}">
+                    <div class="media item">
+                     <div class="media-left">
+                        <a data-bind="attr: { href: businesses[0].url }" >
+                            <img class="media-object" data-bind="attr: { src: businesses[0].image_url }" />
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <h5 style="text-transform:uppercase" class="media-heading">
+                            <a target="_blank" data-bind="attr: { href: businesses[0].url }, text: businesses[0].name" >
+                            </a>
+                        </h5>
+                        <p data-bind="text: businesses[0].display_phone"></p>
+                        <p data-bind="text: businesses[0].snippet_text"></p>
+                      </div>
+                   </div>
+                </li>    
+            </ul>
+
+	  	</div>
+	  </div>
+	  </div>
+	  <div id="page-content-wrapper">
+	    <div class="container-fluid nopadding">
+	      <div class="row nomargins">
+	        <div class="col-lg-12 nopadding ">
+	        <!-- button open/close sidebar with click binding -->
+	          <h1 class="toggle-b">
+	          	<a href="#menu-toggle" data-bind="click: toggleBar" class="gradient-menu" id="menu-toggle">
+	          		<span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+	          	</a>
+	          </h1>
+	          <!-- map container with custom googlemap binding -->
+	          <div id="map_canvas" data-bind="googlemap: { locations: places }"></div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- it is my secret token for google api, please change it on your own ?key=AIzaSyDboMTW1rOIHZbuFUy7H0Cmaht7Q40JcJg -->
+ 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDboMTW1rOIHZbuFUy7H0Cmaht7Q40JcJg"></script>
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/knockout-3.4.0.js"></script>
+    <script src="js/utils/sha1.js"></script>
+    <script src="js/utils/oauth.js"></script>
+    <script src="js/utils/underscore.js"></script>
+    <!-- order of these files is required -->
+    <script src="js/dataproviders/yelp.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <!-- order of these files is required -->
+    </body>
+</html>
+

@@ -1,0 +1,241 @@
+
+html, body, div, span, applet, object, iframe, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+.locations{
+    margin-top: 15px;
+}
+
+.locations li{
+    margin-bottom: 5px;
+}
+#map_canvas,
+#wrapper,
+#page-content-wrapper {
+  height: 100%;
+  width: 100%;
+}
+.container-fluid,
+.row,
+.col-lg-12 {
+  height: 100%;
+  width: 100%;
+}
+
+.box-shadow-menu {
+  position: relative;
+  padding-left: 1.25em;
+}
+.box-shadow-menu:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1em;
+  height: 0.15em;
+  background: black;
+  box-shadow: 0 0.25em 0 0 black, 0 0.5em 0 0 black;
+}
+
+
+.gradient-menu {
+  position: relative;
+}
+
+#menu-toggle{
+  font-size: 0.8em;
+  display: block;
+  margin: 5px auto;
+}
+
+.nav-tabs>li {
+  float: none;
+}
+.nav-tabs {
+  border-bottom: 0;
+}
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+  margin: 0;
+  border-radius: 0;
+}
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+*#wrapper.toggled {
+  padding-right: 0;
+}
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  right: 38%;
+  width: 0;
+  height: 100%;
+  margin-right: -38%;
+  overflow-y: auto;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+#wrapper.toggled #sidebar-wrapper {
+  width: 38%;
+}
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  
+}
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -38%;
+}
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+}
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+@media(min-width:768px) {
+  #wrapper {
+    
+    padding-right: 38%;
+  }
+  #wrapper.toggled {
+    padding-right: 0;
+  }
+  #sidebar-wrapper {
+    /*width: 250px;*/
+    width: 38%;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0;
+  }
+  #page-content-wrapper {
+    position: relative;
+  }
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+
+  .row.nomargins {
+    margin-right: 0;
+    margin-left: 0;
+	}
+
+	.container-fluid.nopadding{
+		padding-right: 0;	
+		padding-left: 0;
+	}
+
+	.nopadding{
+		padding-right: 0;	
+		padding-left: 0;
+	}
+}
+
+.toggle-b{
+	 position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 1000;
+    height: 50px;
+    width: 50px;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 8px -1px;
+    background: #fff;
+    text-align: center;
+    padding: 6px 0;
+}
+.toggle-b a{
+  color: rgb(106,106,106);
+}
+.item:hover{
+  cursor: pointer;
+}
